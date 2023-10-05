@@ -35,7 +35,8 @@ class Uploader extends Component
                 'file_path'=>$file->storeAs('files',$name)
             ]);
         });
-        $this->redirect('dashboard');
+
+        $this->dispatch('refresh')->to('uploaded-files');
     }
     public function render()
     {
